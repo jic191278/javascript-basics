@@ -1,41 +1,117 @@
 const getNthElement = (index, array) => {
-  // your code here
+  while (index >= array.length) {
+    index -= array.length;
+  }
+  return array[index];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  // let newString = `${array[0]},`;
+  // for (let i = 1; i < array.length; i++) {
+  //   i !== array.length - 1
+  //     ? (newString += `${array[i]},`)
+  //     : (newString += `${array[i]}`);
+  // }
+  // return newString;
+  ///////////////////////////////////////////
+  // let newString = '';
+  // for (let i = 0; i < array.length; i++) {
+  //   i !== array.length - 1
+  //     ? (newString += `${array[i]},`)
+  //     : (newString += `${array[i]}`);
+  // }
+  // return newString;
+  return array.toString();
 };
 
 const csvStringToArray = string => {
-  // your code here
+  // const array = [string[0]];
+  // for (let i = 1; i < string.length; i++) {
+  //   if (i % 2 === 0) array.push(string[i]);
+  // }
+  // return array;
+
+  /////////////////////////////////////////////
+  // const array = [];
+  // for (let i = 0; i < string.length; i++) {
+  //   if (i % 2 === 0) array.push(string[i]);
+  // }
+  // return array;
+
+  return string.split(',');
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  // const newArray = [];
+  // for (let i = 0; i < array.length; i++) {
+  //   newArray.push(array[i]);
+  // }
+  // newArray.push(element);
+  // return newArray;
+
+  ////////////////////////////////////////
+  // const newArray = [];
+  // array.forEach(item => newArray.push(item));
+  // newArray.push(element);
+  // return newArray;
+
+  const newArray = array.map(item => item);
+  newArray.push(element);
+  return newArray;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  // for (let i = 0; i < array.length; i++) {
+  //   if (i === index) array.splice(i, 1);
+  // }
+
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  // const newArray = [];
+  // numbers.forEach(num => {
+  //   newArray.push(String(num));
+  // });
+  // return newArray;
+
+  return numbers.map(num => String(num));
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  // const newArray = [];
+  // strings.forEach(string => {
+  //   newArray.push(string.toUpperCase());
+  // });
+  // return newArray;
+
+  return strings.map(string => string.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  const newArray = [];
+  for (let i = 0; i < strings.length; i++) {
+    let newString = '';
+    for (let j = strings[i].length - 1; j >= 0; j--) {
+      newString += strings[i][j];
+    }
+    newArray.push(newString);
+  }
+  return newArray;
 };
 
 const onlyEven = numbers => {
-  // your code here
+  // const newArray = [];
+  // numbers.forEach(num => {
+  //   if (num % 2 === 0) newArray.push(num);
+  // });
+  // return newArray;
+
+  return numbers.filter(num => num % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
