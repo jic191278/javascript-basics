@@ -67,11 +67,8 @@ function containsVowels(string) {
 
 function isLowerCase(string) {
   for (let i = 0; i < string.length; i++) {
-    if (
-      string[i] === string[i].toUpperCase() ||
-      typeof string[i] !== 'number'
-    ) {
-      return false;
+    if (string.charCodeAt(i) < 48 || string.charCodeAt(i) > 57) {
+      if (string[i] === string[i].toUpperCase()) return false;
     }
   }
   return true;
