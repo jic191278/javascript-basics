@@ -127,20 +127,41 @@ const removeNthElement2 = (index, array) => {
 const elementsStartingWithAVowel = strings => {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   return strings.filter(item => vowels.includes(item[0].toLowerCase()));
+  // try with regex ?
 };
 
 const removeSpaces = string => {
   //return string.replace(/ /gi, '');
-  // return string.split(' ').join('');
-  ////// Try with reduce method //////
+  return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  // reduce((accumulator, currentValue)=>{});
+  return numbers.reduce((total, num) => {
+    return total + num;
+  }, 0);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  const newArray = [];
+  while (strings.length > 0) {
+    const index = findSmallestIndex(strings);
+    newArray.push(strings[index]);
+    strings.splice(index, 1);
+  }
+  return newArray;
+};
+// given an array of strings, return the index of the item with the smallest last letter (charcode)
+const findSmallestIndex = arr => {
+  let smallestIndex = 0;
+  let smallestCharCode = arr[0].charCodeAt(arr[0].length - 1);
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].charCodeAt(arr[i].length - 1) < smallestCharCode) {
+      smallestIndex = i;
+      smallestCharCode = arr[i].charCodeAt(arr[i].length - 1);
+    }
+  }
+  return smallestIndex;
 };
 
 module.exports = {
