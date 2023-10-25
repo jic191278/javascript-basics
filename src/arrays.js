@@ -115,15 +115,24 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  // const newArray = [];
+  // for (let i = 0; i < array.length; i++) {
+  //   if (i !== index) newArray.push(array[i]);
+  // }
+  // return newArray;
+
+  return array.filter((item, i) => i !== index);
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  return strings.filter(item => vowels.includes(item[0].toLowerCase()));
 };
 
 const removeSpaces = string => {
-  // your code here
+  //return string.replace(/ /gi, '');
+  // return string.split(' ').join('');
+  ////// Try with reduce method //////
 };
 
 const sumNumbers = numbers => {
