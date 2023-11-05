@@ -51,23 +51,10 @@ function startsWith(char, string) {
 }
 
 function containsVowels(string) {
-  // const vowelArray = ['a', 'e', 'i', 'o', 'u'];
-  // for (let i = 0; i < string.length; i++) {
-  //   if (vowelArray.includes(string[i].toLowerCase())) {
-  //     return true;
-  //   }
-  // }
-  // return false;
   return !!string.match(/[aeiou]/i);
 }
 
 function isLowerCase(string) {
-  // for (let i = 0; i < string.length; i++) {
-  //   if (string.charCodeAt(i) < 48 || string.charCodeAt(i) > 57) {
-  //     if (string[i] === string[i].toUpperCase()) return false;
-  //   }
-  // }
-  // return true;
   return string === string.toLowerCase();
 }
 
