@@ -1,11 +1,9 @@
 const createPerson = (name, age) => {
-  // return { name: name, age: age };
   return { name, age };
 };
 
 const getName = object => {
-  //return object.name;
-  return object['name'];
+  return object.name;
 };
 
 const getProperty = (property, object) => {
@@ -13,7 +11,7 @@ const getProperty = (property, object) => {
 };
 
 const hasProperty = (property, object) => {
-  return object.hasOwnProperty(property);
+  return property in object;
 };
 
 const isOver65 = person => {
@@ -21,15 +19,10 @@ const isOver65 = person => {
 };
 
 const getAges = people => {
-  // const newArray = [];
-  // people.forEach(person => newArray.push(person.age));
-  // return newArray;
-
   return people.map(person => person.age);
 };
 
 const findByName = (name, people) => {
-  // test only expecting one object to be returned, the first match?
   return people.filter(person => person.name === name)[0];
 };
 
@@ -40,7 +33,7 @@ const findHondas = cars => {
 const averageAge = people => {
   return (
     people.reduce((total, person) => {
-      return (total += person.age);
+      return total + person.age;
     }, 0) / people.length
   );
 };
@@ -49,8 +42,8 @@ const createTalkingPerson = (name, age) => {
   return {
     name,
     age,
-    introduce: function(name) {
-      return `Hi ${name}, my name is ${this.name} and I am ${this.age}!`;
+    introduce(person) {
+      return `Hi ${person}, my name is ${this.name} and I am ${this.age}!`;
     }
   };
 };
