@@ -15,16 +15,11 @@ function none(a, b) {
 }
 
 function one(a, b) {
-  return (a && !b) || (!a && b);
+  return a !== b;
 }
 
 function truthiness(a) {
-  //return a ? true : false;
-  if (a) {
-    return true;
-  } else {
-    return false;
-  }
+  return !!a;
 }
 
 function isEqual(a, b) {
@@ -40,38 +35,40 @@ function isLessThanOrEqualTo(a, b) {
 }
 
 function isOdd(a) {
-  return a % 2 !== 0 ? true : false;
+  return a % 2 !== 0;
 }
 
 function isEven(a) {
-  return a % 2 === 0 ? true : false;
+  return a % 2 === 0;
 }
 
 function isSquare(a) {
-  return Number.isInteger(Math.sqrt(a)) ? true : false;
+  return Number.isInteger(Math.sqrt(a));
 }
 
 function startsWith(char, string) {
-  return string[0] === char ? true : false;
+  return string[0] === char;
 }
 
 function containsVowels(string) {
-  const vowelArray = ['a', 'e', 'i', 'o', 'u'];
-  for (let i = 0; i < string.length; i++) {
-    if (vowelArray.includes(string[i].toLowerCase())) {
-      return true;
-    }
-  }
-  return false;
+  // const vowelArray = ['a', 'e', 'i', 'o', 'u'];
+  // for (let i = 0; i < string.length; i++) {
+  //   if (vowelArray.includes(string[i].toLowerCase())) {
+  //     return true;
+  //   }
+  // }
+  // return false;
+  return !!string.match(/[aeiou]/i);
 }
 
 function isLowerCase(string) {
-  for (let i = 0; i < string.length; i++) {
-    if (string.charCodeAt(i) < 48 || string.charCodeAt(i) > 57) {
-      if (string[i] === string[i].toUpperCase()) return false;
-    }
-  }
-  return true;
+  // for (let i = 0; i < string.length; i++) {
+  //   if (string.charCodeAt(i) < 48 || string.charCodeAt(i) > 57) {
+  //     if (string[i] === string[i].toUpperCase()) return false;
+  //   }
+  // }
+  // return true;
+  return string === string.toLowerCase();
 }
 
 module.exports = {
